@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      input {
+        height: 40vh;
+        width: 60vw;
+        color: antiquewhite;
+        background-color: rgb(206, 145, 145);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Your Character" />
+    <h1>Left Character :<span>20</span></h1>
+  </body>
+
+  <script>
+    let inp = document.querySelector("input");
+
+    let left = document.querySelector("#left");
+
+    let span = document.querySelector("span");
+
+    inp.addEventListener("input", function () {
+      let logic = 20 - inp.value.length;
+
+      span.textContent = logic;
+
+      if (logic < 0) {
+        span.style.color = "red";
+      } else {
+        span.style.color = "white";
+      }
+    });
+  </script>
+</html>

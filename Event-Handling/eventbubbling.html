@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        width: 100%;
+        height: 100%;
+        background-color: aliceblue;
+      }
+      .nav {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(231, 241, 241);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      button {
+        color: white;
+        background-color: red;
+        border: none;
+        height: 40px;
+      }
+
+      .lt {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- //jispe event aayega agr uspr listener nahi hua to humara event uske parent par listener dhundhega aese karte upar ki trf move karega -->
+
+    <div class="main">
+      <div class="nav">
+        <a href="">Home</a><a href="">About</a>
+        <button>Click and follow</button>
+      </div>
+
+      <ul>
+        <li>Mansi</li>
+        <li>Ayush</li>
+        <li>Gaurav</li>
+        <li>Aashish</li>
+        <li>Divyansh</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    let nav = document.querySelector(".nav");
+
+    nav.addEventListener("click", function () {
+      alert("Clicked");
+    });
+
+    let ul = document.querySelector("ul");
+
+    ul.addEventListener("click", function (dets) {
+      // ul.style.textDecoration = "line-through";
+
+      // console.log(dets)
+
+      // dets.target.style.textDecoration = "line-through";
+
+      dets.target.classList.toggle("lt");
+    });
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      small {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input required class="name" type="text" placeholder="Name" /><br />
+      <small>The name should be greater.</small>
+      <br />
+      <input type="email" placeholder="email" /><br /><br />
+      <input type="password" placeholder="Password" /><br /><br />
+      <input type="text" placeholder="Semester" /><br /><br />
+      <select>
+        <option value="Male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option></select
+      ><br /><br />
+      <input type="submit" />
+    </form>
+  </body>
+
+  <script>
+    let nm = document.querySelector(".name");
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", function (dets) {
+      dets.preventDefault();
+      console.log(nm.value);
+      if (nm.value.length <= 2) {
+        // alert("Name should be greater")
+        document.querySelector("small").style.display = "initial";
+      } else {
+        document.querySelector("small").style.display = "none";
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+height: 100vh;
+width: 100vw;
+
+        }
+.a{
+    height:80%;
+    width: 80%;
+    background-color: red;
+}
+.b{
+    height:80%;
+    width: 80%;
+    background-color: rgb(30, 255, 0);
+}
+
+.c{
+    height:80%;
+    width: 80%;
+    background-color: rgb(55, 88, 197);
+}
+button{
+    height: 40px;
+    width: 80px;
+    background-color: green;
+    border: none;
+    color: white;
+   
+}
+
+    
+    </style>
+</head>
+<body>
+
+    <!-- 
+    Jab bhi hum click karte hai ya koi bhi event raise karte hai to jo event flow do bhase me chalta hai 
+    
+    phase 1: event top level element se neeche ki trf aayega.
+
+    phase 2: event raised element se parent ki taraf jayega 
+
+    // event capturing automatic bnd hoti hai aur bubbling chlti hai to capturing ko on krne ke liye "true "likhte hai.
+    
+
+    -->
+
+<div class="a"> A
+    <div class="b">B
+        <div class="c"> C
+            <button>Click</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+let a = document.querySelector(".a");
+let b = document.querySelector(".b");
+let c = document.querySelector(".c");
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", function(){
+    console.log("button Clicked")
+   
+})
+
+a.addEventListener("click",function(){
+    console.log("A Clicked")
+    },true
+
+)
+
+b.addEventListener("click", function(){
+    console.log("B Clicked");
+})
+c.addEventListener("click", function(){
+    console.log("C Clicked");
+    
+},true
+)
+
+
+
+
+</script>
+
+    
+</body>
+</html>
